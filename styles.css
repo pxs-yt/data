@@ -3,32 +3,63 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
+
 .container {
     width: 90%;
-    margin: auto;
-    overflow: hidden;
+    max-width: 800px;
+    margin: 20px auto;
     padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
 }
-#searchInput {
-    width: 100%;
-    padding: 10px;
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
     margin-bottom: 20px;
 }
+
+.search-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+#searchButton {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 0 4px 4px 0;
+    transition: background-color 0.3s ease;
+}
+
+#searchButton:hover {
+    background-color: #2980b9;
+}
+
+#searchStats {
+    margin-bottom: 15px;
+    font-style: italic;
+    color: #7f8c8d;
+}
+
 #results {
     margin-top: 20px;
 }
-#pagination {
-    margin-top: 20px;
-    text-align: center;
-}
-.pagination-button {
-    margin: 0 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-/* Add these styles to your existing CSS */
 
 .result-item {
     background-color: #f9f9f9;
@@ -36,24 +67,50 @@ body {
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 4px;
+    transition: box-shadow 0.3s ease;
+}
+
+.result-item:hover {
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
 .result-item h3 {
     margin-top: 0;
-    color: #333;
+    color: #2c3e50;
 }
 
 .view-more-btn {
-    background-color: #337ab7;
+    background-color: #2ecc71;
     color: white;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 .view-more-btn:hover {
-    background-color: #286090;
+    background-color: #27ae60;
+}
+
+#pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination-button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination-button:hover {
+    background-color: #2980b9;
 }
 
 .modal {
@@ -66,6 +123,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 
 .full-details {
@@ -75,9 +133,40 @@ body {
     max-width: 80%;
     max-height: 80%;
     overflow-y: auto;
+    position: relative;
+}
+
+.full-details button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.full-details button:hover {
+    background-color: #c0392b;
 }
 
 @media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    #searchInput, #searchButton {
+        font-size: 14px;
+    }
+
+    #searchButton {
+        padding: 10px;
+    }
+
     .full-details {
         max-width: 95%;
         max-height: 95%;

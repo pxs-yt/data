@@ -56,16 +56,16 @@ document.getElementById('searchInput').addEventListener('keypress', function(e) 
 
 function displayResults(results, totalResults) {
     const resultsDiv = document.getElementById('results');
+    const searchStatsDiv = document.getElementById('searchStats');
     resultsDiv.innerHTML = '';
+    searchStatsDiv.innerHTML = '';
 
     if (results.length === 0) {
-        resultsDiv.innerHTML = '<p>No results found. Please try a different search term.</p>';
+        searchStatsDiv.innerHTML = '<p>No results found. Please try a different search term.</p>';
         return;
     }
 
-    const resultsInfo = document.createElement('p');
-    resultsInfo.textContent = `Showing ${results.length} of ${totalResults} results`;
-    resultsDiv.appendChild(resultsInfo);
+    searchStatsDiv.innerHTML = `<p>Showing ${results.length} of ${totalResults} results</p>`;
 
     results.forEach(row => {
         const rowDiv = document.createElement('div');

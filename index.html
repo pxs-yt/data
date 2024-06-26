@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DATA - Large JSON Content Search</title>
+    <title>Large JSON Content Search</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>Large JSON Content Search</h1>
-        <input type="text" id="searchInput" placeholder="Search...">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Enter search term...">
+            <button id="searchButton">Search</button>
+        </div>
+        <div id="searchStats"></div>
         <div id="results"></div>
         <div id="pagination"></div>
     </div>
